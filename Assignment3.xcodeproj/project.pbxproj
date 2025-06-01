@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05003F3E2DECDEC2000E1998 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05003F3D2DECDEC2000E1998 /* GoogleService-Info.plist */; };
+		05003F412DECE13C000E1998 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 05003F402DECE13C000E1998 /* FirebaseAnalytics */; };
+		05003F432DECE13C000E1998 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 05003F422DECE13C000E1998 /* FirebaseFirestore */; };
+		05003F452DECE6EE000E1998 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05003F442DECE6EE000E1998 /* FirebaseAuth */; };
+		05003F472DECF0D9000E1998 /* SigninSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05003F462DECF0D9000E1998 /* SigninSignUp.swift */; };
 		05E5441F2DEA629F00FE5AAF /* AirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E5441E2DEA629F00FE5AAF /* AirlineModel.swift */; };
 		05E544222DEA67F900FE5AAF /* AirlineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E544212DEA67F900FE5AAF /* AirlineDetail.swift */; };
 		05E544262DEA717200FE5AAF /* AirlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E544252DEA717200FE5AAF /* AirlineViewModel.swift */; };
@@ -17,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05003F3D2DECDEC2000E1998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05003F462DECF0D9000E1998 /* SigninSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninSignUp.swift; sourceTree = "<group>"; };
 		05E5441E2DEA629F00FE5AAF /* AirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineModel.swift; sourceTree = "<group>"; };
 		05E544212DEA67F900FE5AAF /* AirlineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetail.swift; sourceTree = "<group>"; };
 		05E544252DEA717200FE5AAF /* AirlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineViewModel.swift; sourceTree = "<group>"; };
@@ -32,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05003F412DECE13C000E1998 /* FirebaseAnalytics in Frameworks */,
+				05003F452DECE6EE000E1998 /* FirebaseAuth in Frameworks */,
+				05003F432DECE13C000E1998 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +53,7 @@
 			children = (
 				ACF5E04129BE957F00DD981A /* AirlineView.swift */,
 				05E544212DEA67F900FE5AAF /* AirlineDetail.swift */,
+				05003F462DECF0D9000E1998 /* SigninSignUp.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -60,6 +71,7 @@
 			children = (
 				ACF5E03E29BE957F00DD981A /* Assignment3 */,
 				ACF5E03D29BE957F00DD981A /* Products */,
+				05003F3D2DECDEC2000E1998 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +148,9 @@
 				Base,
 			);
 			mainGroup = ACF5E03329BE957F00DD981A;
+			packageReferences = (
+				05003F3F2DECE13C000E1998 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = ACF5E03D29BE957F00DD981A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,6 +167,7 @@
 			files = (
 				ACF5E04729BE958000DD981A /* Preview Assets.xcassets in Resources */,
 				ACF5E04429BE958000DD981A /* Assets.xcassets in Resources */,
+				05003F3E2DECDEC2000E1998 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +181,7 @@
 				ACF5E04229BE957F00DD981A /* AirlineView.swift in Sources */,
 				05E544222DEA67F900FE5AAF /* AirlineDetail.swift in Sources */,
 				05E5441F2DEA629F00FE5AAF /* AirlineModel.swift in Sources */,
+				05003F472DECF0D9000E1998 /* SigninSignUp.swift in Sources */,
 				05E544262DEA717200FE5AAF /* AirlineViewModel.swift in Sources */,
 				ACF5E04029BE957F00DD981A /* Assignment3App.swift in Sources */,
 			);
@@ -365,6 +382,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05003F3F2DECE13C000E1998 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05003F402DECE13C000E1998 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05003F3F2DECE13C000E1998 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		05003F422DECE13C000E1998 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05003F3F2DECE13C000E1998 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		05003F442DECE6EE000E1998 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05003F3F2DECE13C000E1998 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACF5E03429BE957F00DD981A /* Project object */;
 }

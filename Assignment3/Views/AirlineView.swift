@@ -6,10 +6,12 @@
 
 
 import SwiftUI
+import FirebaseAuth
 
 struct AirlineView: View {
     
     @ObservedObject var airlinesvm = AirlineViewModel()
+    @Binding var isAuthenticated: Bool
     
     
     var body: some View {
@@ -29,12 +31,24 @@ struct AirlineView: View {
             
             .listStyle(.grouped)
             .navigationTitle("Airlines")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Sign Out") {
+                        signOut()
+                    }
+                    .foregroundColor(.red)
+                }
+            }
+        }
+    }
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            isAuthenticated = false
+        } catch {
+            print("Error signing out \(error.localizedDescription)")
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        AirlineView()
-    }
-}
+
