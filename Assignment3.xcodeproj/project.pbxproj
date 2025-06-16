@@ -12,6 +12,13 @@
 		05003F432DECE13C000E1998 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 05003F422DECE13C000E1998 /* FirebaseFirestore */; };
 		05003F452DECE6EE000E1998 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 05003F442DECE6EE000E1998 /* FirebaseAuth */; };
 		05003F472DECF0D9000E1998 /* SigninSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05003F462DECF0D9000E1998 /* SigninSignUp.swift */; };
+		0552D57E2E008E410066EAB5 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D57D2E008E410066EAB5 /* TimetableViewModel.swift */; };
+		0552D5802E0091710066EAB5 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D57F2E0091670066EAB5 /* TimeView.swift */; };
+		0552D5822E0092450066EAB5 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D5812E00923F0066EAB5 /* TimeDetail.swift */; };
+		0552D5842E00944D0066EAB5 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D5832E0094440066EAB5 /* TimeModel.swift */; };
+		0552D5862E00A4990066EAB5 /* AirportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D5852E00A4990066EAB5 /* AirportModel.swift */; };
+		0552D5882E00A4F70066EAB5 /* AirportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D5872E00A4F70066EAB5 /* AirportViewModel.swift */; };
+		0552D58A2E00A5440066EAB5 /* AirportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0552D5892E00A5440066EAB5 /* AirportView.swift */; };
 		05E5441F2DEA629F00FE5AAF /* AirlineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E5441E2DEA629F00FE5AAF /* AirlineModel.swift */; };
 		05E544222DEA67F900FE5AAF /* AirlineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E544212DEA67F900FE5AAF /* AirlineDetail.swift */; };
 		05E544262DEA717200FE5AAF /* AirlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E544252DEA717200FE5AAF /* AirlineViewModel.swift */; };
@@ -24,6 +31,13 @@
 /* Begin PBXFileReference section */
 		05003F3D2DECDEC2000E1998 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05003F462DECF0D9000E1998 /* SigninSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninSignUp.swift; sourceTree = "<group>"; };
+		0552D57D2E008E410066EAB5 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
+		0552D57F2E0091670066EAB5 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		0552D5812E00923F0066EAB5 /* TimeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeDetail.swift; sourceTree = "<group>"; };
+		0552D5832E0094440066EAB5 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		0552D5852E00A4990066EAB5 /* AirportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportModel.swift; sourceTree = "<group>"; };
+		0552D5872E00A4F70066EAB5 /* AirportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportViewModel.swift; sourceTree = "<group>"; };
+		0552D5892E00A5440066EAB5 /* AirportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportView.swift; sourceTree = "<group>"; };
 		05E5441E2DEA629F00FE5AAF /* AirlineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineModel.swift; sourceTree = "<group>"; };
 		05E544212DEA67F900FE5AAF /* AirlineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineDetail.swift; sourceTree = "<group>"; };
 		05E544252DEA717200FE5AAF /* AirlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineViewModel.swift; sourceTree = "<group>"; };
@@ -51,9 +65,12 @@
 		05E5441B2DEA626500FE5AAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0552D5812E00923F0066EAB5 /* TimeDetail.swift */,
+				0552D57F2E0091670066EAB5 /* TimeView.swift */,
 				ACF5E04129BE957F00DD981A /* AirlineView.swift */,
 				05E544212DEA67F900FE5AAF /* AirlineDetail.swift */,
 				05003F462DECF0D9000E1998 /* SigninSignUp.swift */,
+				0552D5892E00A5440066EAB5 /* AirportView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -61,7 +78,9 @@
 		05E544202DEA62B200FE5AAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0552D5832E0094440066EAB5 /* TimeModel.swift */,
 				05E5441E2DEA629F00FE5AAF /* AirlineModel.swift */,
+				0552D5852E00A4990066EAB5 /* AirportModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +107,8 @@
 			children = (
 				ACF5E03F29BE957F00DD981A /* Assignment3App.swift */,
 				05E544252DEA717200FE5AAF /* AirlineViewModel.swift */,
+				0552D5872E00A4F70066EAB5 /* AirportViewModel.swift */,
+				0552D57D2E008E410066EAB5 /* TimetableViewModel.swift */,
 				05E544202DEA62B200FE5AAF /* Models */,
 				05E5441B2DEA626500FE5AAF /* Views */,
 				ACF5E04329BE958000DD981A /* Assets.xcassets */,
@@ -178,12 +199,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0552D5862E00A4990066EAB5 /* AirportModel.swift in Sources */,
+				0552D57E2E008E410066EAB5 /* TimetableViewModel.swift in Sources */,
+				0552D5882E00A4F70066EAB5 /* AirportViewModel.swift in Sources */,
 				ACF5E04229BE957F00DD981A /* AirlineView.swift in Sources */,
 				05E544222DEA67F900FE5AAF /* AirlineDetail.swift in Sources */,
+				0552D5822E0092450066EAB5 /* TimeDetail.swift in Sources */,
+				0552D5842E00944D0066EAB5 /* TimeModel.swift in Sources */,
+				0552D5802E0091710066EAB5 /* TimeView.swift in Sources */,
 				05E5441F2DEA629F00FE5AAF /* AirlineModel.swift in Sources */,
 				05003F472DECF0D9000E1998 /* SigninSignUp.swift in Sources */,
 				05E544262DEA717200FE5AAF /* AirlineViewModel.swift in Sources */,
 				ACF5E04029BE957F00DD981A /* Assignment3App.swift in Sources */,
+				0552D58A2E00A5440066EAB5 /* AirportView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AirlineDetail: View {
-    
+
     var airline : AirlineModel
+    @Binding var isAuthenticated: Bool
     
     var body: some View {
         VStack {
@@ -29,7 +30,17 @@ struct AirlineDetail: View {
             .padding()
             
             Spacer()
-        }
+            NavigationLink {
+                AirportView(isAuthenticated: $isAuthenticated, selectedAirlineIATA: airline.iata_code)
+                      } label: {
+                          Text("View Airports")
+                              .foregroundColor(.white)
+                              .padding()
+                              .frame(maxWidth: .infinity)
+                              .background(Color.blue)
+                              .cornerRadius(8)
+                              .padding(.horizontal)
+                      }        }
         .frame(maxHeight: .infinity, alignment: .top)
     }
 }

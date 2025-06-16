@@ -19,7 +19,7 @@ struct AirlineView: View {
             List {
                 ForEach(airlinesvm.AirlineData) {airline in
                     NavigationLink{
-                        AirlineDetail(airline: airline)
+                        AirlineDetail(airline: airline, isAuthenticated: $isAuthenticated)
                     } label: {
                         Text(airline.airline_name)
                     }                }
