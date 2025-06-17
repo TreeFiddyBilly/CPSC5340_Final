@@ -15,14 +15,14 @@ struct AirlineDetail: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(airline.airline_name)
+                Text(airline.airline_name ?? "N/A")
                 Text("Airline ID: ") + Text(airline.airline_id)
-                Text("Average Fleet Age: ") + Text(airline.fleet_average_age)
-                Text("Call Sign: ") + Text(airline.callsign)
+                Text("Average Fleet Age: ") + Text(airline.fleet_average_age ?? "N/A")
+                Text("Call Sign: ") + Text(airline.callsign ?? "N/A")
                 Text("Hub Code: ") + Text(airline.hub_code ?? "N/A")
-                Text("Country: ") + Text(airline.country_name)
+                Text("Country: ") + Text(airline.country_name ?? "N/A")
                 Text("Date Founded: ") + Text(airline.date_founded ?? "N/A")
-                Text("Fleet Size: ") + Text(airline.fleet_size)
+                Text("Fleet Size: ") + Text(airline.fleet_size ?? "N/A")
                 Text("Status: ") + Text(airline.status)
                 
             }

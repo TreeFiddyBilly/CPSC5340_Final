@@ -10,7 +10,7 @@ import Foundation
 class AirportViewModel: ObservableObject {
     @Published var airports = [AirportModel]()
     
-    private let accessKey = "070c69e4604b8f80addcd93891e6db88"
+    private let accessKey = "d8f2ed2acf559aa905bc03bbf60ad229"
     
     func fetchAirports() {
         let urlString = "https://api.aviationstack.com/v1/airports?access_key=\(accessKey)&limit=1000"

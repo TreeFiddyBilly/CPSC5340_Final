@@ -21,7 +21,7 @@ struct AirlineView: View {
                     NavigationLink{
                         AirlineDetail(airline: airline, isAuthenticated: $isAuthenticated)
                     } label: {
-                        Text(airline.airline_name)
+                        Text(airline.airline_name ?? "N/A")
                     }                }
                 
             }

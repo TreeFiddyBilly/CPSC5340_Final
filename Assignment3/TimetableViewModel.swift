@@ -11,7 +11,7 @@ class TimetableViewModel: ObservableObject {
     @Published private(set) var TimeData = [TimeModel]()
     @Published var errorMessage: String? = nil  // Optional: bind to UI to show errors
 
-        private let accessKey = "070c69e4604b8f80addcd93891e6db88"
+        private let accessKey = "d8f2ed2acf559aa905bc03bbf60ad229"
 
         func fetchData(airportIATA: String, flightType: String, airlineIATA: String? = nil) {
             let baseUrl = "https://api.aviationstack.com/v1/timetable"
@@ -62,11 +62,11 @@ class TimetableViewModel: ObservableObject {
                         }
                     }
                 } catch {
-                    // Try decoding known API error format
+                 
                     if let apiError = try? JSONDecoder().decode(APIErrorResponse.self, from: data) {
                         DispatchQueue.main.async {
                             print("API Error: \(apiError.data.error)")
-                            self.TimeData = []  // Clear existing data
+                            self.TimeData = []  
                             self.errorMessage = apiError.data.error
                         }
                     } else {

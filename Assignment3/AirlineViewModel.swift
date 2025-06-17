@@ -9,7 +9,7 @@ import Foundation
 
 class AirlineViewModel : ObservableObject {
     @Published private(set) var AirlineData = [AirlineModel]()
-    private let url = "https://api.aviationstack.com/v1/airlines?limit=1000&access_key=070c69e4604b8f80addcd93891e6db88"
+    private let url = "https://api.aviationstack.com/v1/airlines?limit=1000&access_key=d8f2ed2acf559aa905bc03bbf60ad229"
     
     
     func fetchData() {
@@ -24,7 +24,7 @@ class AirlineViewModel : ObservableObject {
                             do {
                                 let results = try JSONDecoder().decode(AirlineResults.self, from: data)
                                 DispatchQueue.main.async {
-                                    self.AirlineData = results.data
+                                    self.AirlineData = results.data ?? []
                                 }
                             } catch {
                                 print(error)

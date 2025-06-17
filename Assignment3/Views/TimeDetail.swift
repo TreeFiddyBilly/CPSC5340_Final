@@ -30,7 +30,7 @@ struct TimeDetail: View {
             Text("Time: \(timeModel.departure.scheduledTime ?? "N/A")")
             Text("Gate: \(timeModel.departure.gate ?? "-")")
             Text("Terminal: \(timeModel.departure.terminal ?? "-")")
-
+            Text("Delay: \(timeModel.departure.delay ?? "-")")
             Divider()
 
             Text("🛬 Arrival")
@@ -38,7 +38,8 @@ struct TimeDetail: View {
             Text("Time: \(timeModel.arrival.scheduledTime ?? "N/A")")
             Text("Gate: \(timeModel.arrival.gate ?? "-")")
             Text("Terminal: \(timeModel.arrival.terminal ?? "-")")
-
+            Text("Delay: \(timeModel.arrival.delay ?? "-")")
+            
             Spacer()
         }
         .padding()
