@@ -12,34 +12,34 @@ class AirportViewModel: ObservableObject {
     
     private let accessKey = "d8f2ed2acf559aa905bc03bbf60ad229"
     
-    func fetchAirports() {
-        let urlString = "https://api.aviationstack.com/v1/airports?access_key=\(accessKey)&limit=1000"
-        guard let url = URL(string: urlString) else {
-            print("Invalid airports URL")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                print("Error fetching airports: \(error.localizedDescription)")
+    func fetchAirports(for airlineIATA: String) {
+            let apiKey = "d8f2ed2acf559aa905bc03bbf60ad229"
+            let urlString = "https://api.aviationstack.com/v1/airports?limit=1000&access_key=\(apiKey)&airline_iata=\(airlineIATA)"
+            
+            guard let url = URL(string: urlString) else {
+                print("Invalid airport URL")
                 return
             }
-            
-            guard let data = data else {
-                print("No data returned for airports")
-                return
-            }
-            
-            do {
-                let decoded = try JSONDecoder().decode(AirportResults.self, from: data)
-                DispatchQueue.main.async {
-                    self.airports = decoded.data
+
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Airport fetch error: \(error.localizedDescription)")
+                    return
                 }
-            } catch {
-                print("Decoding error for airports: \(error)")
-            }
-        }.resume()
+
+                guard let data = data else {
+                    print("No data returned for airport fetch.")
+                    return
+                }
+
+                do {
+                    let decoded = try JSONDecoder().decode(AirportResults.self, from: data)
+                    DispatchQueue.main.async {
+                        self.airports = decoded.data
+                    }
+                } catch {
+                    print("Airport decoding error: \(error)")
+                }
+            }.resume()
+        }
     }
-}
-
-

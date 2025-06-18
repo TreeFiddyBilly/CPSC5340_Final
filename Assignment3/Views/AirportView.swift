@@ -14,6 +14,7 @@ struct AirportView: View {
     @Binding var isAuthenticated: Bool
     let selectedAirlineIATA: String
 
+    @State private var airports: [AirportModel] = []
     @State private var searchText = ""
 
     var filteredAirports: [AirportModel] {
@@ -52,7 +53,9 @@ struct AirportView: View {
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .onAppear {
-                airportVM.fetchAirports()
+                searchText = ""
+                airportVM.airports = []
+                airportVM.fetchAirports(for: selectedAirlineIATA)
             }
             .navigationTitle("Select Airport")
         }

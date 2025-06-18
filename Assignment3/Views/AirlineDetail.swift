@@ -12,6 +12,8 @@ struct AirlineDetail: View {
     var airline : AirlineModel
     @Binding var isAuthenticated: Bool
     
+    
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 10) {
@@ -32,7 +34,8 @@ struct AirlineDetail: View {
             Spacer()
             NavigationLink {
                 AirportView(isAuthenticated: $isAuthenticated, selectedAirlineIATA: airline.iata_code)
-                      } label: {
+                        .id(airline.iata_code)
+            } label: {
                           Text("View Airports")
                               .foregroundColor(.white)
                               .padding()
@@ -40,7 +43,8 @@ struct AirlineDetail: View {
                               .background(Color.blue)
                               .cornerRadius(8)
                               .padding(.horizontal)
-                      }        }
+                      }
+        }
         .frame(maxHeight: .infinity, alignment: .top)
     }
 }

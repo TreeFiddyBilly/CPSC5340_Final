@@ -12,23 +12,34 @@ struct AirlineView: View {
     
     @ObservedObject var airlinesvm = AirlineViewModel()
     @Binding var isAuthenticated: Bool
+    @State private var searchText = ""
     
-    
+    var filteredAirlines: [AirlineModel] {
+        if searchText.isEmpty {
+            return airlinesvm.AirlineData
+        } else {
+            return airlinesvm.AirlineData.filter {
+                $0.airline_name?.lowercased().contains(searchText.lowercased()) ?? false
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
             List {
-                ForEach(airlinesvm.AirlineData) {airline in
-                    NavigationLink{
+                ForEach(filteredAirlines) { airline in
+                    NavigationLink {
                         AirlineDetail(airline: airline, isAuthenticated: $isAuthenticated)
                     } label: {
-                        Text(airline.airline_name ?? "N/A")
-                    }                }
-                
+                        Text(airline.airline_name ?? "")
+                    }
+                }
             }
-                .onAppear {
-                    airlinesvm.fetchData()
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .onAppear {
+                searchText = ""
+                airlinesvm.fetchData()
             }
-            
             .listStyle(.grouped)
             .navigationTitle("Airlines")
             .toolbar {
@@ -41,6 +52,7 @@ struct AirlineView: View {
             }
         }
     }
+
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -50,5 +62,3 @@ struct AirlineView: View {
         }
     }
 }
-
-
